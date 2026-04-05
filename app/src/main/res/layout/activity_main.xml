@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/header_layout"
+        android:layout_gravity="center">
+        <ImageButton
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/menu_hamburger_1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:id="@+id/menu_click"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Note Pad"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:layout_weight="8"
+            android:layout_marginStart="20dp"
+            android:textFontWeight="@integer/material_motion_duration_long_2"
+            />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+<!--        <fragment-->
+<!--            android:id="@+id/fragmentContainerView"-->
+<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:defaultNavHost="true"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:navGraph="@navigation/nav_graph" />-->
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:defaultNavHost="true"-->
+<!--            app:navGraph="@navigation/nav_graph"-->
+<!--            android:id="@+id/fragmenet_container"-->
+<!--            android:name="com.example.notes.HomwFragment"-->
+<!--            />-->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmenet_container"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/float_btn"
+            android:src="@drawable/plus"
+            android:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="60dp"
+            android:layout_marginEnd="40dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
